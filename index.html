@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        overflow: hidden;
+  margin:0;
+  padding:0;
+}
+.collapsible {
+  background-color: rgb(37, 36, 36);
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+.head1{
+    margin-top: 40px;
+  width: 40%;
+  padding: 20px;
+  margin-left: 20px;
+}
+.container{
+        width: 100%;
+
+    }
+    .fixed-header, .fixed-footer{
+        width: 100%;
+        position: fixed;        
+        background: rgb(51, 90, 255);
+        color: #fff;
+      
+        text-align: right;
+    }
+    .fixed-header{
+        top: 0;
+        left: 0;
+    }
+    .fixed-footer{
+        bottom: 0;
+    }    
+    /* Some more styles to beutify this example */
+    nav a{
+        color: #fff;
+        text-decoration: none;
+        padding: 7px 20px;
+        display: inline-block;
+        
+    }
+    #box{
+        padding: 10px ;
+        width : 90px;
+        float: right;
+        height: 100%;
+         background-color: #333 ;
+    }
+    #box1
+{
+  height: 40%;
+  width: 35px;
+  float: left;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+#box1 img
+{
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  display: block;
+}
+</style>
+</head>
+<body>   
+        <div class="fixed-header">
+                
+                <div class="container">
+
+                    <nav>
+                            <div id= "box1">
+                                    <img alt="" src="download.jpg" />
+                            </div>
+                        <div id="box">
+                          <a href="#">GO TO</a>  
+                        </div>
+                    </nav>
+                </div>
+            </div>
+  
+ <div class = "head1">
+       <p> OBJECTIVES <b> > CREATE OBJECTIVE</b></p>
+   </div>         
+<div class="center">
+
+<button class="collapsible  collapsible-active">DEFINE OBJECTIVE</button>
+<div class="content" style="max-height: 100%">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<br>
+<button class="collapsible">KEY RESULT AREAS</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<br>
+<button class="collapsible">WEIGHTAGE AND PRIVACY</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</body>
+</html>
